@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt'); // Ensure bcrypt is imported
+const bcrypt = require('bcryptjs'); // Ensure bcrypt is imported
 const { Pool } = require('pg');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
