@@ -44,8 +44,8 @@ An **AI-Driven Marketplace for Vehicles** that leverages advanced AI technology 
 - **MongoDB**: For storing AI training data and logs.
 
 ### AI Integration:
-- **Recommendation System**:
-  - Built using Python and TensorFlow.
+- **Recommendation System/Chatbot**:
+  - Built using BotPress.
   - Trained on user preferences and vehicle data.
 - **Natural Language Processing (NLP)**:
   - For understanding user queries and providing accurate search results.
@@ -88,13 +88,13 @@ An **AI-Driven Marketplace for Vehicles** that leverages advanced AI technology 
 5. **Run the project**:
    - Backend:
      ```bash
-     cd backend
-     npm start
+     cd Backend
+     node index.js
      ```
    - Frontend:
      ```bash
-     cd frontend
-     npm start
+     cd Frontend
+     yarn run dev
      ```
 
 ---
@@ -106,11 +106,7 @@ An **AI-Driven Marketplace for Vehicles** that leverages advanced AI technology 
    - Use the search and filter options to find your ideal vehicle.
    - Book test rides directly through the platform.
 
-2. **For Sellers**:
-   - Register and list vehicles for sale.
-   - Monitor listing performance through the dashboard.
-
-3. **For Admins**:
+2. **For Admins**:
    - Log in to manage users, vehicles, and test rides.
    - Refine AI recommendations by updating training data.
 
@@ -151,6 +147,7 @@ An **AI-Driven Marketplace for Vehicles** that leverages advanced AI technology 
 ---
 
 ## Future Enhancements 🌟
+- Currently the website only has cars, in future other category vehicles can also be added.
 - Integration with payment gateways for secure transactions.
 - Real-time chat between buyers and sellers.
 - AI-powered price suggestions for sellers.
@@ -171,14 +168,14 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgements 🙏
 - [PostgreSQL](https://www.postgresql.org/) and [MongoDB](https://www.mongodb.com/) for database management.
 - [React.js](https://reactjs.org/) for building the frontend.
-- [TensorFlow](https://www.tensorflow.org/) for AI model development.
+- [Botpress](https://botpress.com) for chatbot development
 
 ---
 
 ## Contact 📨
 For any queries or suggestions, feel free to contact:
-- **Your Name**: [your.email@example.com](mailto:your.email@example.com)
-- [GitHub Profile](https://github.com/your-username)
+- **Your Name**: [cghithesh7@gmail.com](mailto:cghithesh7@gmail.com)
+- [GitHub Profile](https://github.com/HITHESH2023)
 
 ---
 
