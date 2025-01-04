@@ -1,45 +1,63 @@
-# Vehicle Service Management System 🚗🔧
+# AI-Driven Marketplace for Vehicles 🚗🤖
 
-A **Vehicle Service Management System** designed to streamline the process of vehicle servicing and test ride bookings for luxury hyper sports cars and bikes. The project caters to busy professionals, providing a seamless experience for booking services, allocating mechanics, and managing test rides.
+An **AI-Driven Marketplace for Vehicles** that leverages advanced AI technology to provide personalized vehicle recommendations, facilitate test ride bookings, and streamline the buying and selling process for luxury cars and bikes. This platform is designed to enhance user experience and efficiency for both buyers and sellers.
 
 ---
 
 ## Features 🌟
-- **Customer Portal**:
-  - Users can register and log in to book services for their vehicles.
-  - Book test rides for luxury vehicles.
-- **Admin Dashboard**:
-  - Manage customer details and appointments.
-  - Allocate mechanics for services.
-  - Manage test ride bookings and inventory.
-- **AI-Powered Recommendations**:
-  - Suggests test cars to users based on their preferences.
+
+### For Buyers:
+- **Personalized Recommendations**:
+  - AI suggests vehicles based on user preferences and search history.
+- **Test Ride Booking**:
+  - Schedule test rides for luxury vehicles with ease.
+- **Advanced Search Filters**:
+  - Filter vehicles by brand, model, price, features, and more.
+
+### For Sellers:
+- **Seamless Listings**:
+  - Create and manage vehicle listings effortlessly.
+- **Performance Insights**:
+  - Analytics on listing views, inquiries, and sales.
+
+### For Admins:
 - **Inventory Management**:
-  - Tracks available cars for test rides and manages vehicle details.
+  - Oversee vehicle listings and test ride availability.
+- **User Management**:
+  - Manage buyers and sellers on the platform.
+- **AI Training Data**:
+  - Update and refine AI recommendation algorithms.
 
 ---
 
 ## Tech Stack 🛠️
+
 ### Frontend:
-- **React.js**: For building a responsive and interactive user interface.
-- **HTML5**, **CSS3**, **JavaScript**: For additional styling and functionality.
+- **React.js**: For a dynamic and responsive user interface.
+- **HTML5**, **CSS3**, **JavaScript**: Core web technologies.
 - **TailwindCSS**: For modern and efficient styling.
 
 ### Backend:
 - **Node.js**: For server-side logic.
 - **Express.js**: To handle API requests and routing.
-- **PostgreSQL**: As the relational database for storing user, service, and test ride data.
+- **PostgreSQL**: As the relational database for storing user, vehicle, and transaction data.
+- **MongoDB**: For storing AI training data and logs.
 
 ### AI Integration:
-- AI model for recommending test vehicles based on user preferences.
+- **Recommendation System**:
+  - Built using Python and TensorFlow.
+  - Trained on user preferences and vehicle data.
+- **Natural Language Processing (NLP)**:
+  - For understanding user queries and providing accurate search results.
 
 ---
 
 ## Installation & Setup 🚀
+
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/vehicle-service-management.git
-   cd vehicle-service-management
+   git clone https://github.com/your-username/ai-vehicle-marketplace.git
+   cd ai-vehicle-marketplace
    ```
 
 2. **Install dependencies**:
@@ -55,14 +73,16 @@ A **Vehicle Service Management System** designed to streamline the process of ve
      ```
 
 3. **Setup the database**:
-   - Ensure PostgreSQL is installed and running.
-   - Create a database and run the provided SQL scripts in `database/schema.sql` to set up the schema.
+   - Ensure PostgreSQL and MongoDB are installed and running.
+   - Create the necessary databases and run the provided scripts in `database/schema.sql` and `database/seed.js`.
 
 4. **Environment variables**:
    - Create a `.env` file in the backend folder and add the following:
      ```
      PORT=5000
      DATABASE_URL=your_postgresql_connection_string
+     MONGO_URI=your_mongodb_connection_string
+     AI_API_KEY=your_ai_api_key
      ```
 
 5. **Run the project**:
@@ -80,13 +100,24 @@ A **Vehicle Service Management System** designed to streamline the process of ve
 ---
 
 ## Usage 💻
-1. Visit the customer portal to register and log in.
-2. Book vehicle services or test rides via the user-friendly interface.
-3. Admins can log in to the admin dashboard to manage users, appointments, and test rides.
+
+1. **For Buyers**:
+   - Register and log in to explore vehicles.
+   - Use the search and filter options to find your ideal vehicle.
+   - Book test rides directly through the platform.
+
+2. **For Sellers**:
+   - Register and list vehicles for sale.
+   - Monitor listing performance through the dashboard.
+
+3. **For Admins**:
+   - Log in to manage users, vehicles, and test rides.
+   - Refine AI recommendations by updating training data.
 
 ---
 
 ## Database Schema 📊
+
 ### Tables:
 1. **Users**:
    - `id` (Primary Key)
@@ -94,29 +125,36 @@ A **Vehicle Service Management System** designed to streamline the process of ve
    - `last_name`
    - `email`
    - `password`
+   - `role` (buyer/seller/admin)
 
-2. **Test Rides**:
+2. **Vehicles**:
    - `id` (Primary Key)
-   - `name`
-   - `age`
-   - `license_no`
-   - `car`
+   - `seller_id` (Foreign Key)
+   - `brand`
+   - `model`
+   - `price`
+   - `features`
+   - `availability`
+
+3. **Test Rides**:
+   - `id` (Primary Key)
+   - `vehicle_id` (Foreign Key)
+   - `user_id` (Foreign Key)
    - `ride_date`
 
-3. **Services**:
+4. **AI Logs** (MongoDB):
    - `id` (Primary Key)
-   - `user_id` (Foreign Key)
-   - `vehicle_details`
-   - `problem_description`
-   - `mechanic_id` (Foreign Key)
+   - `user_query`
+   - `recommendations`
+   - `timestamp`
 
 ---
 
 ## Future Enhancements 🌟
-- Integration with payment gateways for online payments.
-- Real-time notifications for service updates.
-- Advanced analytics for admin insights.
-- Enhanced AI recommendations for test rides.
+- Integration with payment gateways for secure transactions.
+- Real-time chat between buyers and sellers.
+- AI-powered price suggestions for sellers.
+- Augmented Reality (AR) view for vehicles.
 
 ---
 
@@ -131,9 +169,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ## Acknowledgements 🙏
-- [PostgreSQL](https://www.postgresql.org/) for database management.
+- [PostgreSQL](https://www.postgresql.org/) and [MongoDB](https://www.mongodb.com/) for database management.
 - [React.js](https://reactjs.org/) for building the frontend.
-- [Node.js](https://nodejs.org/) and [Express.js](https://expressjs.com/) for backend development.
+- [TensorFlow](https://www.tensorflow.org/) for AI model development.
 
 ---
 
@@ -144,5 +182,5 @@ For any queries or suggestions, feel free to contact:
 
 ---
 
-Thank you for using the Vehicle Service Management System! 🚗✨
+Thank you for exploring the AI-Driven Marketplace for Vehicles! 🚗✨
 
